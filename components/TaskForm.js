@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
 import { Priority } from "../Utils/enums";
-import { getTodayDate, getTomorrowDate, isDateValid, isDateGreaterThanToday } from "../Utils/helperFunctions";
+import { getTodayDate, getTomorrowDate, isDateValid } from "../Utils/helperFunctions";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { dataFormat } from "../Utils/enums";
 
@@ -21,10 +21,6 @@ const TaskForm = ({ setTasks, tasks, isUpdate, data, setData, setModalVisible}) 
     }
     
     if(!data.id){
-        if(!isDateGreaterThanToday(taskDeadline)){
-            alert("Date should be of today or after today");
-            return;
-        }
         const newTask = {
           id: Math.random().toString(),
           name: taskName,

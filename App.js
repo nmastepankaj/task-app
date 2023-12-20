@@ -4,13 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
-  Image,
   StatusBar,
-  ImageBackground,
   Modal,
-  ActivityIndicator,
-  TextInput,
   SafeAreaView,
   Pressable,
   FlatList,
@@ -50,7 +45,6 @@ export default function App() {
           setTasks(data);
         } catch (e) {
           console.log("error while getting tasks");
-          // setIsError(true);
         }
       }
       asyncAction();
@@ -62,7 +56,6 @@ export default function App() {
       <ScrollView>
         <StatusBar backgroundColor="#6d63ff" barStyle="light-content" />
         <TaskForm setTasks={setTasks} tasks={tasks} isUpdate={false} data={formData} setData={setFormData} setModalVisible={setModalVisible}/>
-        {/* <Button title="Get Data" onPress={getData}/> */}
         <View style={styles.curvedShape}></View>
 
         <View style={styles.taskBox}>
@@ -83,13 +76,6 @@ export default function App() {
               />
             }
             ListEmptyComponent={<Text>No Items Found</Text>}
-            // ListHeaderComponent={
-            //   <Text style={styles.headerText}>Pokemon List</Text>
-            // }
-            // ListFooterComponent={
-            //   <Text style={styles.footerText}>End of list</Text>
-            // }
-            // horizontal={true}
           />
         </View>   
 
@@ -98,7 +84,6 @@ export default function App() {
 
 
       {/* Model For Updating Task */}
-
         <Modal
           animationType="fade-in"
           transparent={true}
@@ -126,7 +111,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // paddingTop: Platform.OS === "android" ? 20 : 0,
     backgroundColor: "#f6f7fc",
   },
   curvedShape: {

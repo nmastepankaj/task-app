@@ -44,17 +44,3 @@ export const isDateValid = (dateString) => {
     return true;
 }
 
-
-
-export const isDateGreaterThanToday = (dateString) => {
-    const today = new Date();
-    const [day, month, year] = dateString.split('/');
-    const date = new Date(year, month - 1, day+1);
-
-    return date >= today;
-}
-
-
-
-
-
