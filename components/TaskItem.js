@@ -19,7 +19,6 @@ const TaskItem = ({ data, setTasks, tasks, setModalVisible, setData }) => {
       setTasks(tasks);
     } catch (e) {
       alert("error while deleting task");
-      console.log("error while deleting task");
     }
   };
 

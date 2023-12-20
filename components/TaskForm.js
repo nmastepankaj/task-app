@@ -39,7 +39,6 @@ const TaskForm = ({ setTasks, tasks, isUpdate, data, setData, setModalVisible}) 
           const jsonValue = JSON.stringify(allTasks);
           setTasks(allTasks);
           await AsyncStorage.setItem("tasks", jsonValue);
-          console.log({tasks})
           setModalVisible(true);
           setModalVisible(false);
           setTaskName("");
@@ -49,7 +48,6 @@ const TaskForm = ({ setTasks, tasks, isUpdate, data, setData, setModalVisible}) 
           alert("Task added successfully");
         } catch (e) {
             alert("error while adding task");
-          console.log("error while adding task");
         }
     }else{
         const newTask = {
@@ -83,7 +81,6 @@ const TaskForm = ({ setTasks, tasks, isUpdate, data, setData, setModalVisible}) 
           setData(dataFormat);
         } catch (e) {
             alert("error while updating task");
-          console.log("error while updating task");
         }
     }
   };

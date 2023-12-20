@@ -31,7 +31,6 @@ export default function App() {
   const getDataFromAsyncStorage = async () => {
     try {
         const value = await AsyncStorage.getItem("tasks");
-        console.log({ value: value });
         if (value !== null) {
             return value;
         }
@@ -47,8 +46,6 @@ export default function App() {
       const asyncAction = async () => {
         try {
           let data = await getDataFromAsyncStorage();
-          // setIsError(false);
-          console.log({ data: data });
           data = JSON.parse(data);
           setTasks(data);
         } catch (e) {
@@ -59,27 +56,6 @@ export default function App() {
       asyncAction();
     }, []);
     
-    
-  //   const editTask = (taskId, newName, newDeadline, newPriority) => {
-  //   const updatedTasks = tasks.map((task) => {
-  //     if (task.id === taskId) {
-  //       return {
-  //         ...task,
-  //         name: newName,
-  //         deadline: newDeadline,
-  //         priority: newPriority,
-  //       };
-  //     }
-  //     return task;
-  //   });
-  //   setTasks(updatedTasks);
-  // };
-
-  // const removeTask = (taskId) => {
-  //   const updatedTasks = tasks.filter((task) => task.id !== taskId);
-  //   setTasks(updatedTasks);
-  // };
-  // console.log({ modalVisible });
 
   return (
     <SafeAreaView style={styles.container}>
